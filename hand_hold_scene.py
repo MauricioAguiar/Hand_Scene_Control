@@ -242,10 +242,9 @@ def video_capture(sceneitem):
         else:
           obs.obs_sceneitem_set_visible(sceneitem, False)
 
-        #if debug:
-        cv2.imshow('Tracking Hands Debug', image)
+        if debug:
+          cv2.imshow('Tracking Hands Debug', image)
 
-        del image
 
     else:
       try:
