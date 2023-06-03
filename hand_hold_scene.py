@@ -242,9 +242,10 @@ def video_capture(sceneitem):
         else:
           obs.obs_sceneitem_set_visible(sceneitem, False)
 
-        if debug:
-          cv2.imshow('Tracking Hands Debug', image)
+        #if debug:
+        cv2.imshow('Tracking Hands Debug', image)
 
+        del image
 
     else:
       try:
@@ -262,8 +263,8 @@ def switch_bool():
   
   if is_camera_open():
     set_camera_open(False)
-    #global move_sceneitem
-    #obs.obs_source_release(move_sceneitem)
+    global move_sceneitem
+    obs.obs_source_release(move_sceneitem)
     
   else:
     set_camera_open(True)
